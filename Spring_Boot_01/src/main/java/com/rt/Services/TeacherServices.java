@@ -25,6 +25,12 @@ public class TeacherServices {
 		List<Teacher> list = tcrdao.findByName(name);
 		return list;
 	}
+	
+
+	public List<Teacher> getByTeacherBySalary(int name) {
+		List<Teacher> list = tcrdao.findBySalary(name);
+		return list;
+	}
 
 
 	public List<Teacher> getTeacherByAddress(String address) {

@@ -53,6 +53,15 @@ public class HomeController {
 		List<Teacher> list = tcrservices.getByTeacherByName(name);
 		return list;
 	}
+	
+	// ----------------------------Select By salary-----------------------------------
+	
+	@GetMapping("/teacher/salary/{salary}")
+	public List<Teacher> getByTeacherBySalary(@PathVariable int salary) {
+
+		List<Teacher> list = tcrservices.getByTeacherBySalary(salary);
+		return list ;
+	}
 
 	// ----------------------------Select By address-----------------------------------
 	
@@ -76,5 +85,7 @@ public class HomeController {
 		List<Teacher> list = tcrservices.getAllata();
 return list;
 	}
+	
+	
 	
 }

@@ -18,6 +18,10 @@ public interface TeacherDao extends JpaRepository<Teacher, Integer> {
 	@Query(value = "select e from Teacher e where e.name=:name", nativeQuery = false)
 	List<Teacher> findByName(@Param("name") String name);
 	
+	
+	@Query(value = "select e from Teacher e where e.salary=:salary", nativeQuery = false)
+	List<Teacher> findBySalary(@Param("salary") int name);
+	
 	//-----------------------------------------------------------------------------------------
 	@Query(value = "select e from Teacher e where e.address=:address ", nativeQuery=false)
 	List<Teacher> findByAddress(@Param("address")String address);
