@@ -69,6 +69,8 @@ public class HomeController {
 	public List<Teacher> getTeacherByAddress(@PathVariable String address) {
 		List<Teacher> tc = tcrservices.getTeacherByAddress(address);
 		return tc;
+		
+		// ----------------------------Select By id-----------------------------------
 
 	}
 	@DeleteMapping("/teacher/id/{id}")
