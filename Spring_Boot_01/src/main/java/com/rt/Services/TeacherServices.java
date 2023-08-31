@@ -26,18 +26,21 @@ public class TeacherServices {
 		return list;
 	}
 	
+	// ----------------------------Select By salary-----------------------------------
 
 	public List<Teacher> getByTeacherBySalary(int name) {
 		List<Teacher> list = tcrdao.findBySalary(name);
 		return list;
 	}
 
+	// ----------------------------Select By address-----------------------------------
 
 	public List<Teacher> getTeacherByAddress(String address) {
 	List<Teacher> list = tcrdao.findByAddress(address);
 		return list;
 	}
       
+	// ----------------------------delete teacher By id-----------------------------------
 
 	public Teacher deleteByTeacher(int id) {
 		
@@ -45,6 +48,7 @@ public class TeacherServices {
 		return null;
 	}
 
+	// ----------------------------Select By all data-----------------------------------
 	public List<Teacher> getAllata() {
 		List<Teacher> list = tcrdao.findAll();
 		return list;
