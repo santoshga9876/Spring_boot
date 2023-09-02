@@ -3,6 +3,7 @@ package com.rt.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import com.rt.Services.TeacherServices;
 import com.rt.entity.Student;
 import com.rt.entity.Teacher;
 
+@CrossOrigin("*")
 @RestController
 public class HomeController {
 
@@ -36,7 +38,7 @@ public class HomeController {
 
 	// ----------------------------add By teacher-----------------------------------
 
-	@PostMapping("/teacher")
+	@PostMapping("/add/teacher")
 	public String AddTeacher(@RequestBody Teacher t) {
 
 		tcrservices.AddTeacher(t);
@@ -70,9 +72,10 @@ public class HomeController {
 		List<Teacher> tc = tcrservices.getTeacherByAddress(address);
 		return tc;
 		
-		// ----------------------------Select By id-----------------------------------
-
 	}
+	
+	// ----------------------------Select By id-----------------------------------
+	
 	@DeleteMapping("/teacher/id/{id}")
 	public Teacher deleteIdByTeacher(@PathVariable int id) {
 		Teacher t = tcrservices.deleteByTeacher(id);
@@ -82,6 +85,7 @@ public class HomeController {
 	}
 	
 	// ----------------------------Select All Data-----------------------------------
+	
 	@GetMapping("/teacher/alldata")
 	public List<Teacher> getAllata() {
 		List<Teacher> list = tcrservices.getAllata();
